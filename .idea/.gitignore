@@ -3,5 +3,5 @@
 /workspace.xml
 /codeStyles
 /inspectionProfiles
-*.xml
-*.iml
+/.idea
+.iml
