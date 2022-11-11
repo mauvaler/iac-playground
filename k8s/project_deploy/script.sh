@@ -12,4 +12,4 @@ echo "Criando servicos no cluster..........."
 kubectl apply -f ./services.yml
 
 echo "Criando deployments..................."
-kubectl apply -f ./deployment.yml
+kubectl apply -f ./deployment:1.0.yml --record
