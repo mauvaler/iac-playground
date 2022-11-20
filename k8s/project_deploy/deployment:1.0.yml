@@ -12,8 +12,19 @@ spec:
         app: mysql
     spec:
       containers:
-      - name: mysql
-        image: mauvaler/database-mysql:1.0
+      - image: mauvaler/database-mysql:1.0
+        name: mysql
+        env:
+          - name: MYSQL_ROOT_PASSWORD
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: ROOT_PASSWORD
+          - name: MYSQL_DATABASE
+            valueFrom:
+              secretKeyRef:
+                name: mysql-secrets
+                key: MYSQL_DATABASE
         imagePullPolicy: Always
         name: mysql
         ports:
